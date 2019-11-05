@@ -15,10 +15,12 @@ for x in $@
 do
     if [ -z $x ]; then
         printf "\nYou need argument such as: [com.xxx.yyy.Bbbb]\n\n"
+        continue
     fi
 
-    if [[ ! $x =~ ^([a-zA-Z\.]+)+([a-zA-Z]+)+$ ]]; then
+    if [[ ! $x =~ ^([a-zA-Z\.]+)+([.]+)([a-zA-Z]+)+$ ]]; then
         printf "\nNamespace is not correct\n\n"
+        continue
     fi
 
     grails generate-controller $x
