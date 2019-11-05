@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+#
+# This command generates the scaffoldings...
+#
+# it generates files such as...
+#
+# - grails-app/services/com/kei/????Service.groovy
+# - grails-app/controllers/com/kei/????Controller.groovy
+# - src/integration-test/groovy/com/kei/????ServiceSpec.groovy
+# - src/test/groovy/com/kei/????ControllerSpec.groovy
+#
 
 for x in $@
 do
