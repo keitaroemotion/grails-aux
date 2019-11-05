@@ -7,11 +7,11 @@ do
         continue
     fi
 
-    if [[ ! $x =~ ^([a-zA-Z\.]+)+([.]+)([a-zA-Z]+)+$ ]]; then
+    if [[ ! $x =~ ^([a-zA-Z\.]+)+([.]+)([A-Z])([a-z]+)$ ]]; then
         printf "\nNamespace is not correct\n\n"
         continue
     fi
 
-    echo grails generate-controller $x
+    echo grails create-domain-class $(echo $x | sed 's/\./ /g' | awk '{print $NF}'| tr '[:upper:]' '[:lower:]') 
     echo grails generate-all $x 
 done
