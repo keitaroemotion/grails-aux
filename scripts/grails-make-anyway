@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+for x in $@
+do
+    if [ -z $x ]; then
+        printf "\nYou need argument such as: [com.xxx.yyy.Bbbb]\n\n"
+    fi
+
+    if [[ ! $x =~ ^([a-zA-Z\.]+)+([a-zA-Z]+)+$ ]]; then
+        printf "\nNamespace is not correct\n\n"
+    fi
+
+    grails generate-controller $x
+    grails generate-all $x 
+done
