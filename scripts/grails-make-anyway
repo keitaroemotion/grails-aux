@@ -12,6 +12,6 @@ do
         continue
     fi
 
-    echo grails create-domain-class $(echo $x | sed 's/\./ /g' | awk '{print $NF}'| tr '[:upper:]' '[:lower:]') 
-    echo grails generate-all $x 
+    grails create-domain-class $(echo $x | sed 's/\./ /g' | awk '{print $NF}'| tr '[:upper:]' '[:lower:]') 
+    grails generate-all $x 
 done
