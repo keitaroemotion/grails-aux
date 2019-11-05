@@ -10,4 +10,4 @@ if [[ ! $1 =~ ^([a-zA-Z\.]+)+([a-zA-Z]+)+$ ]]; then
     exit
 fi
 
-echo grails create-domain-class $1 
+grails create-domain-class $1 
